@@ -1,0 +1,69 @@
+Souffrant Roudley
+Marchand Beyney Kelian
+Suedois Yeshua 
+
+1. Sélecteurs CSS complexes utilisés et leur emplacement
+
+		#menu div.logo-menu
+
+Rôle : Gère le style de la navigation déroulante (burger menu).
+Emplacement HTML :
+
+<div id="menu">
+    <div class="logo-menu">
+        <span class="burger-menu">☰</span>
+        <div class="dropdown-content">
+            <a href="index.html">Acceuil</a>
+            <a href="html/page galion.html">Galion</a>
+        </div>
+    </div>
+</div>
+
+Emplacement CSS : Fichier css/style_home.css.
+		#sectionparcour div img
+
+Rôle : Gère les styles spécifiques des images dans la section des parcours.
+Emplacement HTML :
+
+<section id="sectionparcour">
+    <div>
+        <img src="image/img1.jpg" alt="Parcours image">
+    </div>
+</section>
+
+Emplacement CSS : Fichier css/style_home.css.
+
+Voici les règles media-queries utilisées:
+
+1. Règle 1 : Adaptation du menu pour les petits écrans
+Règle CSS utilisée :
+
+@media (max-width: 768px) {
+    #menu {
+        flex-direction: column;
+        align-items: center;
+    }
+    .dropdown-content {
+        display: block;
+        text-align: center;
+    }
+    .burger-menu {
+        display: block;
+    }
+}
+Effet :
+Réorganise la disposition du menu de navigation pour qu'il s'empile verticalement sur les écrans de moins de 768 pixels de large.
+Affiche le bouton "burger menu" pour une navigation plus ergonomique sur mobile.
+Le contenu déroulant du menu (dropdown-content) s'affiche en bloc.
+2. Règle 2 : Ajustement des images pour les petits écrans
+Règle CSS utilisée :
+
+@media (max-width: 480px) {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+Effet :
+Les images prennent toute la largeur disponible tout en conservant leurs proportions.
+Cela garantit que les images ne débordent pas de leur conteneur sur des écrans très étroits (comme les téléphones).

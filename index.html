@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>En Chute Libre</title>
+    <link rel="stylesheet" href="css/style_home.css">
+    <link rel="stylesheet" href="css/regles_commune.css">
+</head>
+<body>
+    <header id="acceuil">
+        <div id="menu">
+
+            <div class="logo">
+                <a href="index.html"><img src="image/img_logo.png" alt="logo"></a>
+            </div>
+            <div class="logo-menu">
+                <span class="burger-menu">☰</span>
+                <div class="dropdown-content">
+                    <a href="index.html">Acceuil</a>
+                    <a href="html/page_galion.html">Galion</a>
+                    <a href="html/bassinbleu.html">Bassin bleu</a>
+                    <a href="html/matouba.html">Matouba</a>
+                </div>
+            </div>
+        </div>
+        <!-- Titre centré -->
+        <h1 data-target-resolver></h1>
+    </header>
+
+    <script>
+        const resolver = {
+            resolve: function resolve(options, callback) {
+                const resolveString = options.resolveString || options.element.getAttribute('data-target-resolver');
+                const combinedOptions = Object.assign({}, options, { resolveString: resolveString });
+    
+                function getRandomInteger(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min;
+                }
+    
+                function randomCharacter(characters) {
+                    return characters[getRandomInteger(0, characters.length - 1)];
+                }
+    
+                function doRandomiserEffect(options, callback) {
+                    const characters = options.characters;
+                    const timeout = options.timeout;
+                    const element = options.element;
+                    const partialString = options.partialString;
+                    let iterations = options.iterations;
+    
+                    setTimeout(() => {
+                        if (iterations >= 0) {
+                            const nextOptions = Object.assign({}, options, { iterations: iterations - 1 });
+    
+                            if (iterations === 0) {
+                                element.textContent = partialString;
+                            } else {
+                                element.textContent = partialString.substring(0, partialString.length - 1) + randomCharacter(characters);
+                            }
+    
+                            doRandomiserEffect(nextOptions, callback);
+                        } else if (typeof callback === "function") {
+                            callback();
+                        }
+                    }, timeout);
+                }
+    
+                function doResolverEffect(options, callback) {
+                    const resolveString = options.resolveString;
+                    const characters = options.characters;
+                    const offset = options.offset;
+                    const partialString = resolveString.substring(0, offset);
+                    const combinedOptions = Object.assign({}, options, { partialString: partialString });
+    
+                    doRandomiserEffect(combinedOptions, () => {
+                        const nextOptions = Object.assign({}, options, { offset: offset + 1 });
+    
+                        if (offset <= resolveString.length) {
+                            doResolverEffect(nextOptions, callback);
+                        } else if (typeof callback === "function") {
+                            callback();
+                        }
+                    });
+                }
+    
+                doResolverEffect(combinedOptions, callback);
+            }
+        };
+    
+        // Liste des chaînes à afficher
+        const strings = [
+            'Explorez la Guadeloupe !',
+            'Découvrez les cascades cachées.',
+            'Laissez vous portez par le courant de la liberté !',
+            'Une aventure inoubliable vous attend !'
+        ];
+    
+        // Copie temporaire pour éviter les répétitions
+        let unusedStrings = [...strings];
+    
+        const options = {
+            offset: 0,
+            timeout: 10,
+            iterations: 10,
+            characters: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '#', '%', '&', '-', '+', '_', '?', '/', '\\', '='],
+            resolveString: '',
+            element: document.querySelector('[data-target-resolver]')
+        };
+    
+        function callback() {
+            // Réinitialise la liste si toutes les chaînes ont été affichées
+            if (unusedStrings.length === 0) {
+                unusedStrings = [...strings];
+            }
+    
+            // Sélectionne une chaîne aléatoire
+            const randomIndex = Math.floor(Math.random() * unusedStrings.length);
+            const resolveString = unusedStrings.splice(randomIndex, 1)[0]; // Retire et utilise une chaîne
+    
+            // Met à jour les options pour la chaîne suivante
+            let nextOptions = Object.assign({}, options, { resolveString: resolveString });
+    
+            // Lance la résolution et planifie la suivante
+            resolver.resolve(nextOptions, () => {
+                setTimeout(callback, 3000); // 3 secondes de délai entre les animations
+            });
+        }
+    
+        // Lancer la première animation
+        callback();
+    </script>
+    
+    
+    <main>
+        <article class="section" id="section1">
+            <a href="html/page_galion.html"><img src="image/img_galion.jpg" alt="photo de profil" class="photo"></a>
+            <h2>Découvrez la cascade du galion :</h2>    
+            <p>Plongez au cœur d'un paradis caché : découvrez la magie des Chutes du Galion, un joyau naturel de la Guadeloupe !</p>
+        </article>
+        <article class="section" id="section2">
+            <a href="html/bassinbleu.html"><img src="image/bassin_blue_img3.jpg" alt="photo de profil" class="photo" id="photo2"></a>
+            <h2>Découvrez le bassin bleu :</h2>    
+            <p>Évadez-vous dans un écrin turquoise au cœur de la nature : le Bassin Bleu vous attend pour une expérience inoubliable !</p>
+        </article>
+
+        <article class="section" id="section3">
+            <a href="html/matouba.html"><img src="image/saut_du_matouba_img_4.jpg" alt="photo de profil" class="photo"></a>
+            <h2>Découvrez la cascade du saut de matouba :</h2>    
+            <p>Vivez l'aventure au Saut de Matouba : une cascade sauvage et envoûtante au cœur de la forêt tropicale !</p>
+        </article>
+
+        <section id="section4">
+
+            <form action="#" method="POST">
+                <h2>Contactez-nous</h2>
+            
+                <div class="form-group-inline">
+                    <div>
+                        <label for="name">Nom :</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom" required>
+                    </div>
+                    <div>
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                    </div>
+                </div>
+            
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+            
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" placeholder="Votre message..." required></textarea>
+            
+                <button type="submit">Envoyer</button>
+            </form>            
+        </section>
+    </main>
+    <footer>
+        <div class="logo">
+            <a href="index.html"><img src="image/img_logo.png" alt="logo"></a>
+        </div>
+        <p>&copy; 2024 En Chute Libre. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

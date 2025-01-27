@@ -1,0 +1,129 @@
+.form-group-inline {
+    display: flex; 
+    gap: 10px; /* Ajoute un espace entre les champs. */
+
+}
+
+.form-group-inline > div {
+    flex: 1; /* Les champs prennent la même largeur. */
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
+form h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, textarea, button {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #1a1a1a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+
+#acceuil {
+    background-image: url(../image/casacade.jpg);
+}
+
+.photo{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: right;
+    margin: 0 20px 5px 10px ;
+    
+}
+
+#photo2{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    margin: 0 20px 5px 10px ;
+    
+}
+.section {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 50px;
+}
+
+.section h2 {
+    margin-bottom: 2px;
+}
+
+.section p {    
+    line-height: 1.4;
+}
+.section::after {
+    content: "";
+    display:block;
+    clear: both;
+}
+
+section {
+    display: flex; /* Active le système de flexbox */
+    justify-content: center; /* Centre horizontalement le contenu */
+    align-items: center; /* Centre verticalement le contenu */
+    
+    border-radius: 25px;
+
+    background-color: #f5f5f5; /* Optionnel, donne un arrière-plan */
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: right;
+    margin: 0 20px 5px 10px;
+    transition: transform 0.3s ease; /* Ajoute une transition fluide */
+}
+
+.photo:hover {
+    transform: scale(1.2); /* Agrandit l'image de 20% */
+}
+
+#photo2 {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    margin: 0 20px 5px 10px;
+    transition: transform 0.3s ease; /* Ajoute une transition fluide */
+}
+
+#photo2:hover {
+    transform: scale(1.2); /* Agrandit l'image de 20% */
+}

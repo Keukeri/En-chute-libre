@@ -1,0 +1,143 @@
+
+#section1tier {
+    display: flex;
+    
+    justify-content: space-between; /* Espace entre l'image et le texte */
+    gap: 20px; /* Espace entre l'image et le texte */
+    margin-top: 2%;
+}
+
+#section1tier h3 {
+    color: #ccc;
+}
+
+#imgdroite {
+    height: 705px;
+    width: 450px;
+    background-size: cover;
+    background-repeat: no-repeat; /* pour img fit */
+    border-radius: 3%;
+    flex-shrink: 0; /* Empêche l'image de rétrécir */
+}
+
+#section1tier div {
+    max-width: 90%; /* Limite la largeur du texte */
+}
+
+.Bassinbleu{
+    background-image: url(../image/cascade-bassin-bleu.jpg);
+}
+.galion{
+    background-image: url(../image/img_galion.jpg);
+}
+.mattouba{
+    background-image: url(../image/saut_matouba_fond.jpg);
+}
+
+#sectionparcour {
+    display: flex;
+    flex-direction: row; /* Disposition horizontale */
+    justify-content: flex-start; /* Aligne tout à gauche */
+    align-items: flex-start; /* Aligne les éléments en haut */
+    gap: 20px; /* Espacement horizontal */
+    margin-top: 2rem;
+}
+
+#imgparc {
+    width: 300px; /* Réduisez légèrement si nécessaire */
+    border-radius: 3%;
+    flex-shrink: 0;
+}
+
+#table-container {
+    display: flex;
+    flex-direction: column; /* Organise les éléments en colonne */
+    align-items: center; /* Centre horizontalement le contenu */
+    justify-content: center; /* Centre verticalement si nécessaire */
+    gap: 10px; /* Espace entre le tableau et l'image */
+    width: 100%; /* Le conteneur prend toute la largeur */
+    text-align: center; /* Centre le texte dans le tableau */
+    margin: auto; /* Centre le conteneur lui-même */
+}
+#table-container figure{
+ text-align: left;
+}
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(140, 140, 140);
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-top: 25px;
+    margin-bottom: 25px; /* Espacement avec l'image */
+    width: auto; /* Ajuste automatiquement la largeur */
+    max-width: 400px; /* Limite la largeur */
+
+}
+
+th, td {
+    border: 1px solid rgb(160, 160, 160);
+    padding: 8px 10px;
+    text-align: center;
+}
+
+#imgbelle {
+    width: 800px; /* Largeur fixe pour l'image belle */
+    height: auto;
+    border-radius: 3%;
+}
+
+figcaption {
+    padding: 2px;
+    font-style: italic;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+
+#textee {
+padding-left: 1em;
+
+}
+
+#sectionmap {
+ text-align: center;
+}
+
+.navbassinbleu {
+    margin-top: 20px; /* Espacement entre le h1 et le menu */
+    text-align: center; /* Centre le menu */
+    position: absolute; /* Position relative au conteneur parent */
+    top: 65%; /* Ajuste pour qu'il soit sous le titre */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, 0); /* Centre avec précision */
+    z-index: 2; /* Assure que le menu reste visible */
+}
+
+.navbassinbleu ul {
+    list-style: none; /* Supprime les puces */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centre les liens horizontalement */
+    gap: 1.5rem; /* Espacement entre les liens */
+}
+
+.navbassinbleu a {
+    color: white; /* Couleur des liens */
+    text-decoration: none; /* Supprime le soulignement */
+    font-size: 1.2rem; /* Taille des liens */
+}
+
+.navbassinbleu a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+a.legende {
+    text-decoration: none; /* Supprime la sous-ligne par défaut */
+    color: inherit; /* Garde la même couleur que le texte environnant */
+}
+
+a.legende:hover {
+    text-decoration: underline; /* Ajoute une sous-ligne au survol */
+}

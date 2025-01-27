@@ -1,0 +1,180 @@
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 5px;
+    
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+header {
+    height: 85vh; /* 85% de la hauteur de l'écran */
+    background-size: cover; /* L'image remplit tout le conteneur */
+    background-repeat: no-repeat; /* Pas de répétition de l'image */
+    background-position: top; /* Aligne en haut */
+    color: white;
+    text-align: center;
+    position: relative; /* Nécessaire pour positionner le h1 indépendamment */
+
+}
+
+#menu {
+    display: flex;
+    justify-content: space-between; /* Logo à gauche, liste déroulante à droite */
+    align-items: center; /* Alignement vertical */
+    padding: 5px 20px; /* Espacement interne */
+}
+
+.logo img {
+    height: 100px; /* Ajustez la hauteur */
+    width: auto; /* Garde les proportions */
+}
+
+#liste select {
+    font-size: 16px; /* Taille du texte */
+    padding: 5px; /* Espacement interne */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: white; /* Couleur de fond */
+    color: black; /* Couleur du texte */
+}
+
+header h1 {
+    font-size: 3.1em; /* Taille du titre */
+    margin: 0; /* Supprime la marge par défaut */
+    position: absolute; /* Positionnement indépendant */
+    top: 50%; /* Centré verticalement */
+    left: 50%; /* Centré horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste le point d'ancrage */
+    z-index: 1; /* Assure que le titre est au-dessus des autres éléments */
+    color: white;
+    -webkit-text-stroke: 1px #F8F8F8;
+    text-shadow: 0px 2px 5px #23430C;
+    letter-spacing:3px;
+}
+
+.logo-menu {
+
+  position: relative;
+  cursor: pointer;
+  
+}
+  
+  
+  
+  .burger-menu {
+  
+    font-size: 3rem;
+  
+  }
+  .dropdown-content {
+  
+    display: none;
+  
+    position: absolute;
+  
+    top: 30px;
+  
+    right: 0;
+  
+    background-color: rgba(0, 0, 0, 0.9);
+  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    z-index: 1;
+  
+  }
+  
+  
+  
+  .dropdown-content a {
+  
+    display: block;
+  
+    padding: 10px 15px;
+  
+    color: white;
+  
+    text-decoration: none;
+  
+  }
+  
+  
+  
+  .dropdown-content a:hover {
+  
+    background-color: rgba(255, 255, 255, 0.2);
+  
+  }
+  
+  
+  
+  .logo-menu:hover .dropdown-content {
+  
+    display: block;
+  
+  }
+
+  /* Mobile First Approach */
+
+/* Pour les écrans inférieurs à 768px (mobile) */
+@media (max-width: 768px) {
+  body {
+      font-size: 14px; /* Réduction de la taille générale du texte */
+  }
+  #menu {
+      flex-direction: column; /* Menu vertical */
+      align-items: center; /* Centrage horizontal */
+      gap: 10px; /* Espacement réduit */
+  }
+  #navbassinbleu ul {
+      flex-direction: column; /* Liens en colonne */
+      gap: 10px; /* Espacement réduit */
+  }
+  header h1 {
+      font-size: 2rem; /* Taille réduite pour le titre */
+  }
+  #imgdroite, #imgparc {
+      width: 100%; /* Images adaptatives */
+      height: auto;
+  }
+  section {
+      margin: 1rem; /* Marges réduites */
+      padding: 0.5rem;
+  }
+}
+
+/* Pour les écrans entre 768px et 1024px (tablette) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+      font-size: 16px; /* Taille modérée du texte */
+  }
+  #menu {
+      gap: 15px; /* Espacement modéré */
+  }
+  #imgdroite, #imgparc {
+      width: 70%; /* Images plus grandes sur tablette */
+      margin: 0 auto; /* Centrage horizontal */
+  }
+  #table-container {
+      gap: 15px; /* Espacement accru entre éléments */
+  }
+  header h1 {
+      font-size: 2.5rem; /* Taille modérée du titre */
+  }
+}
